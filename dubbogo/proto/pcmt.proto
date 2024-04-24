@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.pcmt.grpc.service.go;
+
+//import "network.proto";
+//import "user.proto";
+
+option go_package = "dubbogo/proto/gen;pcmtpb";
+option java_package = 'com.pcmt.grpc.service.go';
+option java_multiple_files = true;
+option java_outer_classname = "PcmtProto";
+option objc_class_prefix = "Pcmt";
+
+message Empty {}
+
+service PcmtService {
+    rpc Ping(Empty) returns (Pong);
+    //    rpc Networks(Empty) returns (networks.NetworkListResponse);// 网络列表
+    //    rpc NetworkDetail(networks.NetworkDetailRequest) returns (networks.NetworkDetailResponse); // 网络详情[可选参数:option_manager_id]
+    //
+    //    rpc CreateUser(users.CreateUserRequest) returns (users.UserResponse); // 创建用户
+    //    rpc UserInfo(users.UserInfoRequest) returns (users.UserResponse); // 查询用户信息
+    //    rpc UpdateUserInfo(users.UserRequest) returns (Empty); // 修改用户信息
+    //    rpc UserList(users.UserInfoListRequest) returns (users.UserInfoListResponse); // 用户列表
+
+}
+
+message Pong {
+    string data = 1;
+}
